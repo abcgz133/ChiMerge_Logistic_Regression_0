@@ -97,7 +97,7 @@ data['Amount_Norm'] = StandardScaler().fit_transform(data['Amount'].values.resha
 # 特征选择
 y = np.array(data.Class.tolist())
 data = data.drop(['Time', 'Amount', 'Class'], axis=1)
-X = np.array(data.as_matrix())
+X = np.array(data.as_matrix())  # this method has changed. now is data.to_numpy()
 # 准备训练集和测试集
 train_x, test_x, train_y, test_y = train_test_split(X, y, test_size=0.1, random_state=33)
 
